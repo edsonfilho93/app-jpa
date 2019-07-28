@@ -12,7 +12,7 @@ public class Programa {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
 		EntityManager em = emf.createEntityManager();
 
-		// para fazer qualquer alteracao no BD é preciso iniciar uma transacao
+		// para fazer qualquer alteracao no BD eh preciso iniciar uma transacao
 		em.getTransaction().begin();
 		Pessoa p1 = em.find(Pessoa.class, 1);
 		em.remove(p1);
@@ -28,10 +28,10 @@ public class Programa {
 		em.remove(p6);
 		em.getTransaction().commit();
 
-		// sempre bom fechar o entity manager ap�s seu uso
+		//eh necessario fechar o entity manager apos o uso 
 		em.close();
 		emf.close();
 
-		System.out.println("OK");
+		System.out.println("Funciona");
 	}
 }
